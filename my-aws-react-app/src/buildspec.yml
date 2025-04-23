@@ -14,5 +14,5 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: frontend/build  # Assuming your build output is in frontend/build
+  base-directory: build  # Assuming your build output is in frontend/build
   discard-paths: yes
