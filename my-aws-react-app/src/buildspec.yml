@@ -2,17 +2,19 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
-      - cd frontend  # Navigate to the subdirectory where package.json is located
+      - echo Installing dependencies...
+      - ls -al  # List files to confirm package.json exists
       - npm install
 
   build:
     commands:
-      - cd frontend  # Ensure you're in the correct directory for the build process
+      - echo Build started on `date`
       - npm run build
 
 artifacts:
   files:
     - '**/*'
-  base-directory: build  # Assuming your build output is in frontend/build
-  discard-paths: yes
+  base-directory: build
