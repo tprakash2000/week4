@@ -3,13 +3,16 @@ version: 0.2
 phases:
   install:
     commands:
+      - cd frontend  # Navigate to the subdirectory where package.json is located
       - npm install
+
   build:
     commands:
+      - cd frontend  # Ensure you're in the correct directory for the build process
       - npm run build
 
 artifacts:
   files:
     - '**/*'
-  base-directory: build
+  base-directory: frontend/build  # Assuming your build output is in frontend/build
   discard-paths: yes
