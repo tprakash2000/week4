@@ -6,7 +6,6 @@ phases:
       nodejs: 18
     commands:
       - echo Installing dependencies...
-      - ls -al  # List files to confirm package.json exists
       - npm install
 
   build:
@@ -15,6 +14,9 @@ phases:
       - npm run build
 
 artifacts:
+  type: S3
+  location: react-app-deploy-bucket2  # Specify your S3 bucket name
+  name: ""  # Leave empty if you don't want to override the artifact name; it will use the default
   files:
     - '**/*'
-  base-directory: build
+  base-directory: build  # Directory where build files are located (usually "build" for React apps)
